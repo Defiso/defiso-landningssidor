@@ -1,0 +1,16 @@
+$susy: (
+  container: 68em,
+);
+
+// Breakpoints
+$medium: em(640);
+$large: em(860);
+
+.container {
+  @include container;
+}
+
+.row {
+  float: left;
+  width: 100%;
+}
