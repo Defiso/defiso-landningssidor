@@ -4,12 +4,14 @@ $heading-font-family: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed
 
 // Font Sizes
 $base-font-size: 1em;
+$base-accent-font-size: em(18); // For contact information etc
 $h1-font-size: em(34);
 $h2-font-size: em(27);
+$heading-accent-font-size: em(29); // For checkmarks, blockquotes etc
 
 // Line height
 $base-line-height: 1.375;
-$heading-line-height: 1.88;
+$heading-line-height: 1.25;
 
 // Other Sizes
 $base-border-radius: 3px;
@@ -25,6 +27,7 @@ $blue: #477dca;
 $dark-gray: #4C4C4C;
 $medium-gray: #999;
 $light-gray: #e4e4e4;
+$warm-gray: #BAB7B8;
 
 // Font Colors
 $base-background-color: #fff;

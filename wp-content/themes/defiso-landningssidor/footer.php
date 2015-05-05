@@ -10,16 +10,28 @@ global $landingpage
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-    <?php dynamic_sidebar( 'footer-1' ); ?>
-		<div class="site-info">
-			
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <?php dynamic_sidebar( 'footer-1' ); ?>
+
+    <!-- added static site-info -->
+    <div class="site-info">
+      <div class="copyright">Copyright © 2015 Städhuset AB.</div>
+      <div class="supplier-logo">Defiso Media</div>
+    </div><!-- .site-info -->
+
+
+  </div>
+</footer><!-- #colophon -->
+
 <?php wp_footer(); ?>
+
+  <!-- Added scripts for sticky sidebar and application.js -->
+  <script type="text/javascript" src="http://landningssida.dev/wp-content/themes/defiso-landningssidor/js/jquery.sticky-kit.min.js"></script>
+  <script type="text/javascript" src="http://landningssida.dev/wp-content/themes/defiso-landningssidor/js/application.js"></script>
+  
   <?php if ($landingpage['slider-switch']) {?>
     <script>
       $(document).ready(function(){

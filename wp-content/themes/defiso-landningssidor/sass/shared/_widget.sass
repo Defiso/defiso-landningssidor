@@ -1,16 +1,19 @@
 .widget-area
   
   .widget-title
+    display: inline-block
     font-family: $heading-font-family
     font-size: $h2-font-size
     line-height: $heading-line-height
     color: $dark-gray
+    margin: 0px 0px 10px 0px
 
   .textwidget
     margin: $paragraph-margin
 
   ul.contact-list
-    margin-top: 10px
+    display: inline-block
+    margin: 15px 0
     $contact-list-height: 41px
 
     li
@@ -38,14 +41,16 @@
   padding: 10px 20px
 
   .widget-title
+    display: inline-block
     font-family: $base-font-family
     font-weight: 300
+    margin: 10px 12px
 
   form
     text-align: center
     margin-top: 20px
 
-  .description, .description-bold, .widget-title
+  .description, .description-bold
     margin: 0px 12px
 
   .description-bold
@@ -54,3 +59,6 @@
   hr
     margin: 10px 0px
     border-color: $base-font-color
+
+  input.button
+    min-width: 150px

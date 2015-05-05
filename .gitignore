@@ -1,4 +1,5 @@
-
 wp-config.php
-
 config.codekit
+**/.sass-cache
+**/.sass-cache/*
+*.css.map

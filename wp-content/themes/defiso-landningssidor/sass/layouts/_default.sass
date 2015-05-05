@@ -1,14 +1,22 @@
+*, *:before, *:after
+  box-sizing: border-box
+
 #page
   +container
+  padding: 0px 20px
+
+#content
+  float: left
+  width: 100%
 
 .content-area
-  +span(12)
+  +span(12 of 12)
 
   +breakpoint($medium)
     +span(8 of 12)
 
 .widget-area
-  +span(12)
+  +span(12 of 12)
   
   +breakpoint($medium)
     +span(4 of 12 last)

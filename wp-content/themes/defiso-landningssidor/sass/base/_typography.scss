@@ -16,7 +16,11 @@ h6 {
   font-family: $heading-font-family;
   font-size: $base-font-size;
   line-height: $heading-line-height;
-  margin: 0;
+  margin: 18px 0px 10px 0px;
+
+  &:first-child {
+    margin: 0px 0px 10px 0px;
+  }
 }
 
 h1 {

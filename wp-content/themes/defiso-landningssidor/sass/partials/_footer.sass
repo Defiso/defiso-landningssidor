@@ -1,7 +1,62 @@
+$footer-background-color: $warm-gray
+
 .site-footer
   float: left
-  background-color: #BAB7B8
-  height: 600px
+  margin-top: 40px
+  padding: 20px 0 40px 0
+  background-color: $footer-background-color
   width: 100%
+
+  .footer-container
+    +container
+    padding: 0 20px
+
   .footer-widget
-    +gallery(4 of 12)
+    +span(12 of 12)
+
+    +breakpoint($medium)
+      +gallery(4 of 12)
+
+  .site-info
+    float: left
+    width: 100%
+    clear: both
+    margin-top: 20px
+
+    +breakpoint($medium)
+      height: 40px
+      position: relative
+
+    .copyright, .supplier-logo
+      float: left
+      margin-bottom: 10px
+
+      +breakpoint($medium)
+        position: absolute
+        bottom: 0
+        margin: 0
+
+    .copyright
+      color: #FFFFFF
+
+      +breakpoint($medium)
+        left: 0
+
+    .supplier-logo
+      font-family: $heading-font-family
+      font-size: $h2-font-size
+      color: $dark-gray
+      line-height: 1
+
+      +breakpoint($medium)
+        right: 0
+
+  .footer-widget-title
+    font-size: $h2-font-size
+    font-weight: 700
+    color: #FFFFFF
+    display: inline-block
+    margin-bottom: 10px
+
+  .footer-contact-information
+    font-size: $base-accent-font-size

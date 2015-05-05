@@ -1,24 +1,29 @@
 <?php
 
 function html_form_code() {
-    echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
+
+    /*
+     * Show placeholder instead of label and add contact-form class. Label is currently commented out.
+     */
+
+    echo '<form class="contact-form" action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
     echo '<p>';
-    echo 'Ditt namn <br/>';
-    echo '<input type="text" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
+    // echo 'Ditt namn <br/>';
+    echo '<input type="text" placeholder="Ditt namn" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
     echo '</p>';
     echo '<p>';
-    echo 'Din e-postadress <br/>';
-    echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
+    // echo 'Din e-postadress <br/>';
+    echo '<input type="email" placeholder="Din e-postadress" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
     echo '</p>';
     echo '<p>';
-    echo 'Telefonnummer <br/>';
-    echo '<input type="text" name="cf-number" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />';
+    // echo 'Telefonnummer <br/>';
+    echo '<input type="text" placeholder="Telefonnummer" name="cf-number" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />';
     echo '</p>';
     echo '<p>';
-    echo 'Meddelande <br/>';
-    echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
+    // echo 'Meddelande <br/>';
+    echo '<textarea rows="10" cols="35" placeholder="Meddelande" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
     echo '</p>';
-    echo '<p><input type="submit" name="cf-submitted" value="Skicka"></p>';
+    echo '<p><input class="button" type="submit" name="cf-submitted" value="Skicka"></p>';
     echo '</form>';
 }
  

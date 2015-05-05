@@ -1,12 +1,29 @@
-.main-navigation
+.main-navigation, .main-navigationtoggled
   background-color: #2AA8CC
+
   .menu
     +clearfix
+
     ul
       +clearfix
+
     li
       float: left
+
       a
         padding: 1em
         display: inline-block
         color: #FFFFFF
+
+.main-navigationtoggled
+  
+  li, a
+    width: 100%
+
+// Mobile Nav
++breakpoint($small)
+  .main-navigation .menu
+    display: none
+
+  .main-navigationtoggled .menu
+    display: block

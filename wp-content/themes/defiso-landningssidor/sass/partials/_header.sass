@@ -1,5 +1,10 @@
 .site-header
   +clearfix
+  position: relative
+  padding-top: 30px
+
+  +breakpoint($medium)
+    padding-top: 0
 
 .site-branding
   +clearfix
@@ -19,15 +24,37 @@
   padding-top: 20px
 
 .site-logo
-  float: right
-  padding-top: 45px
-  img
-    max-height: 50px
-
-.main-navigation
   float: left
+  padding-bottom: 15px
+
+  img
+    max-height: 25px
+
+    +breakpoint($medium)
+      max-height: 50px
+
+  +breakpoint($medium)
+    float: right
+    padding-top: 45px
+    padding-bottom: 0
+
+.main-navigation, .main-navigationtoggled
+  position: absolute
+  top: 0
   width: 100%
 
+  +breakpoint($medium)
+    position: relative
+    float: left
+
 .menu-toggle
+  background: none
+  text-align: left
+  width: 100%
+
+  &:hover, &:focus
+    background: none
+    outline: none
+
   +breakpoint($medium)
     display: none
