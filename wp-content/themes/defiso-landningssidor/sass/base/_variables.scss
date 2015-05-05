@@ -1,13 +1,15 @@
 // Typography
 $base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$heading-font-family: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed";
 
 // Font Sizes
 $base-font-size: 1em;
+$h1-font-size: em(34);
+$h2-font-size: em(27);
 
 // Line height
-$base-line-height: 1.5;
-$heading-line-height: 1.2;
+$base-line-height: 1.375;
+$heading-line-height: 1.88;
 
 // Other Sizes
 $base-border-radius: 3px;
@@ -15,15 +17,18 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
+// Margins
+$paragraph-margin: 0 0 $small-spacing;
+
 // Colors
 $blue: #477dca;
-$dark-gray: #333;
+$dark-gray: #4C4C4C;
 $medium-gray: #999;
-$light-gray: #ddd;
+$light-gray: #e4e4e4;
 
 // Font Colors
 $base-background-color: #fff;
-$base-font-color: $dark-gray;
+$base-font-color: #272525;
 $action-color: $blue;
 
 // Border
