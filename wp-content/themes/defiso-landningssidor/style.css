@@ -323,25 +323,27 @@ table {
   -moz-font-feature-settings: "kern", "liga", "tnum";
   -ms-font-feature-settings: "kern", "liga", "tnum";
   font-feature-settings: "kern", "liga", "tnum";
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   border-collapse: collapse;
   margin: 0.6875em 0;
   table-layout: fixed;
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #bebebe;
-  font-weight: 600;
-  padding: 0.6875em 0;
+  font-weight: 700;
+  padding: 0.6875em 1.375em;
   text-align: left; }
 
 td {
-  border-bottom: 1px solid #e4e4e4;
-  padding: 0.6875em 0; }
+  padding: 0.6875em 1.375em; }
 
 tr,
 td,
 th {
   vertical-align: middle; }
+
+tr:nth-child(2n+2) {
+  background-color: #e4e4e4; }
 
 body {
   -webkit-font-feature-settings: "kern", "liga", "pnum";
@@ -472,6 +474,7 @@ picture {
   padding-top: 20px; }
 
 .site-logo {
+  display: none;
   float: left;
   padding-bottom: 15px; }
   .site-logo img {
@@ -481,6 +484,7 @@ picture {
         max-height: 50px; } }
   @media (min-width: 40em) {
     .site-logo {
+      display: block;
       float: right;
       padding-top: 45px;
       padding-bottom: 0; } }
@@ -489,6 +493,9 @@ picture {
   position: absolute;
   top: 0;
   width: 100%; }
+  @media (max-width: 40em) {
+    .main-navigation, .main-navigationtoggled {
+      background: none !important; } }
   @media (min-width: 40em) {
     .main-navigation, .main-navigationtoggled {
       position: relative;
@@ -497,20 +504,29 @@ picture {
 .menu-toggle {
   background: none;
   text-align: left;
-  width: 100%; }
+  color: #272525;
+  width: 100%;
+  padding: 0.75em 0; }
   .menu-toggle:hover, .menu-toggle:focus {
     background: none;
-    outline: none; }
+    outline: none;
+    color: #272525; }
   @media (min-width: 40em) {
     .menu-toggle {
       display: none; } }
+  .menu-toggle img {
+    margin-right: 8px; }
 
 .main-navigation, .main-navigationtoggled {
-  background-color: #2AA8CC; }
+  background-color: #2AA8CC;
+  z-index: 9; }
   .main-navigation .menu::after, .main-navigationtoggled .menu::after {
     clear: both;
     content: "";
     display: table; }
+  @media (max-width: 40em) {
+    .main-navigation .menu .nav-menu, .main-navigationtoggled .menu .nav-menu {
+      background-color: #2AA8CC; } }
   .main-navigation .menu ul::after, .main-navigationtoggled .menu ul::after {
     clear: both;
     content: "";
@@ -626,6 +642,12 @@ picture {
     margin-bottom: 10px; }
   .site-footer .footer-contact-information {
     font-size: 1.125em; }
+
+@media (max-width: 40em) {
+  .widget-area {
+    border-top: 1px solid #e4e4e4;
+    padding-top: 25px;
+    margin-top: 20px; } }
 
 .home .intro-boxes {
   float: left; }
@@ -756,3 +778,6 @@ form.contact-form {
   text-align: center; }
   form.contact-form input.button {
     min-width: 150px; }
+
+.pricelist .rut {
+  color: #62B06E; }

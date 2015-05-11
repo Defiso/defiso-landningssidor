@@ -35,7 +35,7 @@ global $landingpage
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'defiso-landningssidor' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="/wp-content/themes/defiso-landningssidor/icons/menu.svg"><?php _e( 'Meny', 'defiso-landningssidor' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

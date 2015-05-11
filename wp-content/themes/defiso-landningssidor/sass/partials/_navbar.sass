@@ -1,8 +1,14 @@
 .main-navigation, .main-navigationtoggled
   background-color: #2AA8CC
+  z-index: 9
 
   .menu
     +clearfix
+
+    .nav-menu
+
+      +breakpoint($small)
+        background-color: #2AA8CC
 
     ul
       +clearfix
@@ -21,7 +27,7 @@
     width: 100%
 
 // Mobile Nav
-+breakpoint($small)
++breakpoint($small) // max-width
   .main-navigation .menu
     display: none
 
