@@ -58,7 +58,13 @@ get_header(); ?>
 					<p><?php echo $landingpage['textarea-front-box-1']; ?></p>
 					<?php if ($landingpage['switch-front-boxes-links']) { ?>
 						<div class="buttonwrap">
-							<a href="<?php echo $landingpage['text-front-box-1-link']; ?>" class="button">Läs mer</a>
+							<a href="<?php echo $landingpage['text-front-box-1-link']; ?>" class="button">
+								<?php if ($landingpage['text-front-box-1-label'])
+									echo $landingpage['text-front-box-1-label']; 
+								else
+									echo "Läs mer"; 
+								?>
+							</a>
 						</div>
 					<?php } ?>
 				</div>
@@ -68,7 +74,13 @@ get_header(); ?>
 					<p><?php echo $landingpage['textarea-front-box-2']; ?></p>
 					<?php if ($landingpage['switch-front-boxes-links']) { ?>
 							<div class="buttonwrap">	
-								<a href="<?php echo $landingpage['text-front-box-2-link']; ?>" class="button">Läs mer</a>
+								<a href="<?php echo $landingpage['text-front-box-2-link']; ?>" class="button">
+									<?php if ($landingpage['text-front-box-2-label'])
+										echo $landingpage['text-front-box-2-label']; 
+									else
+										echo "Läs mer"; 
+									?>
+								</a>
 							</div>
 					<?php } ?>
 				</div>
@@ -78,7 +90,15 @@ get_header(); ?>
 					<p><?php echo $landingpage['textarea-front-box-3']; ?></p>
 					<?php if ($landingpage['switch-front-boxes-links']) { ?>
 						<div class="buttonwrap">	
-							<a href="<?php echo $landingpage['text-front-box-3-link']; ?>" class="button">Läs mer</a>
+							<a href="<?php echo $landingpage['text-front-box-3-link']; ?>" class="button">
+
+								<?php if ($landingpage['text-front-box-3-label'])
+									echo $landingpage['text-front-box-3-label']; 
+								else
+									echo "Läs mer"; 
+								?>
+
+							</a>
 						</div>
 					<?php } ?>
 				</div>

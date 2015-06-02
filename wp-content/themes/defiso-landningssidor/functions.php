@@ -121,9 +121,9 @@ function defiso_landningssidor_scripts() {
 
 	wp_enqueue_script( 'jquery-2', get_template_directory_uri() . '/js/jquery-2.1.3.min.js', array(), '2.1.3', true );
 
-	wp_enqueue_script( 'defiso-landningssidor-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'jquery-forms', get_template_directory_uri() . '/js/jquery.form.min.js', array(), '3.51.0-2014.06.20', true );
 
-	wp_enqueue_script( 'defiso-landningssidor-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'defiso-landningssidor-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

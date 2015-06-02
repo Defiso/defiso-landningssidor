@@ -241,6 +241,11 @@ if (!class_exists('defiso_landningssidor_Redux_Framework_config')) {
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields'    => array(
                     array(
+                        'id'       => 'text-client-email',
+                        'type'     => 'text',
+                        'title'    => __('E-postadress för förfrågningar', 'redux-framework-demo'),
+                    ),
+                    array(
                         'id'        => 'section-media-start',
                         'type'      => 'section',
                         'title'     => __('Branding', 'redux-framework-demo'),
@@ -305,10 +310,9 @@ if (!class_exists('defiso_landningssidor_Redux_Framework_config')) {
                         'required'  => array('switch-custom-css', '=', '1'),
                         'type'      => 'ace_editor',
                         'title'     => __('CSS Code', 'redux-framework-demo'),
-                        'subtitle'  => __('Paste your CSS code here.', 'redux-framework-demo'),
+                        'subtitle'  => __('Skriv din css-kod här.', 'redux-framework-demo'),
                         'mode'      => 'css',
                         'theme'     => 'monokai',
-                        'desc'      => 'Possible modes can be found at <a href="http://ace.c9.io" target="_blank">http://ace.c9.io/</a>.',
                         'default'   => "#header{\nmargin: 0 auto;\n}"
                     ),
                     array(
@@ -469,6 +473,12 @@ if (!class_exists('defiso_landningssidor_Redux_Framework_config')) {
                         'title'    => __('Måladress för knappen', 'redux-framework-demo'),
                     ),
                     array(
+                        'id'       => 'text-front-box-1-label',
+                        'required'  => array('switch-front-boxes-links', '=', '1'),
+                        'type'     => 'text',
+                        'title'    => __('Text på knappen', 'redux-framework-demo'),
+                    ),
+                    array(
                         'id'        => 'media-front-box-2',
                         'required'  => array('switch-front-boxes', '=', '1'),
                         'type'      => 'media',
@@ -488,6 +498,12 @@ if (!class_exists('defiso_landningssidor_Redux_Framework_config')) {
                         'title'    => __('Måladress för knappen', 'redux-framework-demo'),
                     ),
                     array(
+                        'id'       => 'text-front-box-2-label',
+                        'required'  => array('switch-front-boxes-links', '=', '1'),
+                        'type'     => 'text',
+                        'title'    => __('Text på knappen', 'redux-framework-demo'),
+                    ),
+                    array(
                         'id'        => 'media-front-box-3',
                         'required'  => array('switch-front-boxes', '=', '1'),
                         'type'      => 'media',
@@ -505,6 +521,29 @@ if (!class_exists('defiso_landningssidor_Redux_Framework_config')) {
                         'required'  => array('switch-front-boxes-links', '=', '1'),
                         'type'     => 'text',
                         'title'    => __('Måladress för knappen', 'redux-framework-demo'),
+                    ),
+                    array(
+                        'id'       => 'text-front-box-3-label',
+                        'required'  => array('switch-front-boxes-links', '=', '1'),
+                        'type'     => 'text',
+                        'title'    => __('Text på knappen', 'redux-framework-demo'),
+                    )
+                )
+            );
+
+
+            $this->sections[] = array(
+                'icon'      => 'el-icon-home',
+                'title'     => __('Widgetinställningar', 'redux-framework-demo'),
+                'fields'    => array(
+                    array(
+                        'id'        => 'switch-sticky-form',
+                        'type'      => 'switch',
+                        'title'     => __('Sticky formulär', 'redux-framework-demo'),
+                        'subtitle'  => __('Om denna funktion aktiveras fästs kontaktformuläret när användaren scrollar förbi', 'redux-framework-demo'),
+                        'default'   => 0,
+                        'on'        => 'Aktivera',
+                        'off'       => 'Avaktivera',
                     )
                 )
             );

@@ -34,6 +34,7 @@ class ladningpage_contact_widget extends WP_Widget {
    * @param array $instance Saved values from database.
    */
   public function widget( $args, $instance ) {
+    global $landingpage;
   
     echo $args['before_widget'];
     if ( ! empty( $instance['title'] ) ) {
@@ -50,7 +51,7 @@ class ladningpage_contact_widget extends WP_Widget {
     echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
     echo '<p>';
     // echo 'Ditt namn <br/>';
-    echo '<input type="text" placeholder="Ditt namn" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
+    echo '<input type="text" placeholder="Ditt namn" name="cf-name" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
     echo '</p>';
     echo '<p>';
     // echo 'Din e-postadress <br/>';
@@ -58,7 +59,7 @@ class ladningpage_contact_widget extends WP_Widget {
     echo '</p>';
     echo '<p>';
     // echo 'Telefonnummer<br/>';
-    echo '<input type="text" placeholder="Telefonnummer" name="cf-subject" pattern="[a-zA-Z ]+" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />';
+    echo '<input type="text" placeholder="Telefonnummer" name="cf-subject" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />';
     echo '</p>';
     echo '<p>';
     // echo 'Meddelande<br/>';
@@ -66,6 +67,7 @@ class ladningpage_contact_widget extends WP_Widget {
     echo '</p>';
     echo '<p><input type="submit" class="button" name="cf-submitted" value="Skicka"></p>';
     echo '</form>';
+    echo '<div id="message" style="display:none"><strong>Tack för ditt meddelande. Vi kommer att höra av oss till dig inom kort.</strong></div>';
      
     // if the submit button is clicked, send the email
     if ( isset( $_POST['cf-submitted'] ) ) {
@@ -77,7 +79,7 @@ class ladningpage_contact_widget extends WP_Widget {
         $message = esc_textarea( $_POST["cf-message"] );
  
         // get the blog administrator's email address
-        $to = get_option( 'admin_email' );
+        $to = $landingpage['text-client-email'];
  
         $headers = "From: $name <$email>" . "\r\n";
  
@@ -86,8 +88,9 @@ class ladningpage_contact_widget extends WP_Widget {
             echo '<div>';
             echo '<p>Thanks for contacting me, expect a response soon.</p>';
             echo '</div>';
+            $_POST['cf-submitted'] = array();
         } else {
-            echo 'An unexpected error occurred';
+            echo 'Ett fel inträffade och formuläret kunde inte skickas.';
         }
     }
     

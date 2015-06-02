@@ -28,9 +28,15 @@ global $landingpage
 
 <?php wp_footer(); ?>
 
-  <!-- Added scripts for sticky sidebar and application.js -->
-  <script type="text/javascript" src="http://landningssida.dev/wp-content/themes/defiso-landningssidor/js/jquery.sticky-kit.min.js"></script>
-  <script type="text/javascript" src="http://landningssida.dev/wp-content/themes/defiso-landningssidor/js/application.js"></script>
+  <?php if ($landingpage['switch-sticky-form']) { ?>
+    <script type="text/javascript" src="http://landningssida.dev/wp-content/themes/defiso-landningssidor/js/jquery.sticky-kit.min.js"></script>
+    <script type="text/javascript">
+      $(".widget_ladningpage_contact_widget").stick_in_parent({
+        parent: '#content',
+        offset_top: 20
+      });
+    </script>
+  <?php } ?>
   
   <?php if ($landingpage['slider-switch']) {?>
     <script>
@@ -73,6 +79,21 @@ global $landingpage
     echo '<script> '. $landingpage['ace-editor-custom-js'] .' </script>';
   }
 ?>
+
+<script>
+  $(document).ready(function() {
+
+      $('form').ajaxForm(function() {
+        $('#message').addClass('success').fadeIn(); 
+        $('form').resetForm();
+      });
+
+      $('input:submit').click(function(){
+        $(this).prop('value', 'Skickar formulär...');
+      });
+
+  });
+</script>
 
 </body>
 </html>
