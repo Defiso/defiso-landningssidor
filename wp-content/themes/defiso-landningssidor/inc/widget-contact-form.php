@@ -40,30 +40,29 @@ class ladningpage_contact_widget extends WP_Widget {
     if ( ! empty( $instance['title'] ) ) {
       echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
     }
+    $text = empty($instance['text']) ? '' : $instance['text'];
 
     /*
      * Show placeholder instead of label. Label is currently commented out.
      */
 
-    echo '<p class="description">Välkommen till Städgiganten. Låt oss ta hand om flyttstädningen så att du själv kan lägga energin på den nya bostaden! För att det ska kännas helt tryggt att anlita oss.</p>';
-    echo '<hr>';
-    echo '<p class="description-bold">Skriv ditt namn och några rader så kontaktar vi dig.</p>';
+    echo '<p class="description">' . $text . '</p>';
     echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
     echo '<p>';
     // echo 'Ditt namn <br/>';
-    echo '<input type="text" placeholder="Ditt namn" name="cf-name" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
+    echo '<input type="text" placeholder="Ditt namn" name="cf-name" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" data-validation="required" data-validation-error-msg="Fyll i ditt namn" />';
     echo '</p>';
     echo '<p>';
     // echo 'Din e-postadress <br/>';
-    echo '<input type="email" placeholder="Din e-postadress" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
+    echo '<input type="email" placeholder="Din e-postadress" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" data-validation="email" data-validation-error-msg="Fyll i en korrekt epostadress" />';
     echo '</p>';
     echo '<p>';
     // echo 'Telefonnummer<br/>';
-    echo '<input type="text" placeholder="Telefonnummer" name="cf-subject" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" />';
+    echo '<input type="text" placeholder="Telefonnummer" name="cf-subject" value="' . ( isset( $_POST["cf-subject"] ) ? esc_attr( $_POST["cf-subject"] ) : '' ) . '" size="40" data-validation="alphanumeric" data-validation-error-msg="Fyll i telefonnummer" />';
     echo '</p>';
     echo '<p>';
     // echo 'Meddelande<br/>';
-    echo '<textarea rows="10" cols="35" placeholder="Meddelande" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
+    echo '<textarea rows="10" cols="35" placeholder="Meddelande" data-validation="required" data-validation-error-msg="Fyll i ditt meddelande" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
     echo '</p>';
     echo '<p><input type="submit" class="button" name="cf-submitted" value="Skicka"></p>';
     echo '</form>';
@@ -111,10 +110,17 @@ class ladningpage_contact_widget extends WP_Widget {
     else {
       $title = __( 'Kontakta oss', 'text_domain' );
     }
+    $text = $instance['text'];
     ?>
     <p>
       <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
       <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+    </p>
+    <p>
+      <label>Text:</label>
+      <textarea class="widefat" name="<?php echo $this->get_field_name('text') ?>">
+        <?php echo esc_attr($text) ?>
+      </textarea>
     </p>
     <?php 
   }
@@ -132,7 +138,7 @@ class ladningpage_contact_widget extends WP_Widget {
   public function update( $new_instance, $old_instance ) {
     $instance = array();
     $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-
+    $instance['text'] = $new_instance['text'];
     return $instance;
   }
 

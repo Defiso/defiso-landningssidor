@@ -75,3 +75,11 @@ select {
   max-width: 100%;
   width: auto;
 }
+
+.has-error {
+  text-align: left;
+
+  input, textarea {
+    margin-bottom: 0;
+  }
+}

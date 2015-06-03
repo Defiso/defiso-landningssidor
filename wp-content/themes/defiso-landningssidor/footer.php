@@ -31,9 +31,26 @@ global $landingpage
   <?php if ($landingpage['switch-sticky-form']) { ?>
     <script type="text/javascript" src="http://landningssida.dev/wp-content/themes/defiso-landningssidor/js/jquery.sticky-kit.min.js"></script>
     <script type="text/javascript">
-      $(".widget_ladningpage_contact_widget").stick_in_parent({
-        parent: '#content',
-        offset_top: 20
+      $(document).ready(function(){
+        if ($(window).width() >= 640) {
+          $(".widget_ladningpage_contact_widget").stick_in_parent({
+            parent: '#content',
+            offset_top: 20
+          });
+        }
+      });
+
+
+      $(window).resize(function() {
+        if ($(window).width() < 640) {
+          $(".widget_ladningpage_contact_widget").trigger("sticky_kit:detach");
+        }
+        else {
+          $(".widget_ladningpage_contact_widget").stick_in_parent({
+            parent: '#content',
+            offset_top: 20
+          });
+        }
       });
     </script>
   <?php } ?>
@@ -81,18 +98,32 @@ global $landingpage
 ?>
 
 <script>
+  $(document).ready(function(){
+    $.validate();
+  });
+</script>
+
+<script>
   $(document).ready(function() {
 
-      $('form').ajaxForm(function() {
-        $('#message').addClass('success').fadeIn(); 
-        $('form').resetForm();
-      });
+      var options = {
+        beforeSubmit: showRequest,
+        success: showResponse
+      }
 
-      $('input:submit').click(function(){
-        $(this).prop('value', 'Skickar formulär...');
-      });
+      $('form').ajaxForm(options);
 
   });
+
+  function showRequest(){
+    $('input:submit').prop('value', 'Skickar formulär...');
+  }
+
+  function showResponse(){
+    $('#message').addClass('success').fadeIn(); 
+    $('form').resetForm();
+    $('input:submit').prop('value', 'Formulär skickat');
+  }
 </script>
 
 </body>

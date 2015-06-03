@@ -106,6 +106,15 @@ function defiso_landningssidor_widgets_init() {
 		'before_title'  => '<span class="footer-widget-title">',
 		'after_title'   => '</span>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Kontakt sidebar', 'defiso-landningssidor' ),
+		'id'            => 'sidebar-contact',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<span class="widget-title">',
+		'after_title'   => '</span>',
+	) );
 }
 add_action( 'widgets_init', 'defiso_landningssidor_widgets_init' );
 
@@ -124,6 +133,8 @@ function defiso_landningssidor_scripts() {
 	wp_enqueue_script( 'jquery-forms', get_template_directory_uri() . '/js/jquery.form.min.js', array(), '3.51.0-2014.06.20', true );
 
 	wp_enqueue_script( 'defiso-landningssidor-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+
+	wp_enqueue_script( 'jquery-form-validator', get_template_directory_uri() . '/js/jquery.form-validator.min.js', array(), '2.2.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

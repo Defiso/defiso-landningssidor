@@ -305,6 +305,11 @@ select {
   max-width: 100%;
   width: auto; }
 
+.has-error {
+  text-align: left; }
+  .has-error input, .has-error textarea {
+    margin-bottom: 0; }
+
 ul,
 ol {
   list-style-type: none;
@@ -428,9 +433,9 @@ picture {
   margin-right: 0; }
   @media (min-width: 40em) {
     .content-area {
-      width: 66.1016949153%;
+      width: 65.7142857143%;
       float: left;
-      margin-right: 1.6949152542%; } }
+      margin-right: 2.8571428571%; } }
 
 .widget-area {
   width: 100%;
@@ -439,7 +444,7 @@ picture {
   margin-right: 0; }
   @media (min-width: 40em) {
     .widget-area {
-      width: 32.2033898305%;
+      width: 31.4285714286%;
       float: right;
       margin-right: 0; } }
 
@@ -589,7 +594,7 @@ picture {
     margin-right: 0; }
     @media (min-width: 40em) {
       .site-footer .footer-widget {
-        width: 32.2033898305%;
+        width: 31.4285714286%;
         float: left; }
         .site-footer .footer-widget:nth-child(3n + 1) {
           margin-left: 0;
@@ -597,11 +602,11 @@ picture {
           clear: both;
           margin-left: 0; }
         .site-footer .footer-widget:nth-child(3n + 2) {
-          margin-left: 33.8983050847%;
+          margin-left: 34.2857142857%;
           margin-right: -100%;
           clear: none; }
         .site-footer .footer-widget:nth-child(3n + 3) {
-          margin-left: 67.7966101695%;
+          margin-left: 68.5714285714%;
           margin-right: -100%;
           clear: none; } }
   .site-footer .site-info {
@@ -661,7 +666,7 @@ picture {
       margin-bottom: 0; }
     @media (min-width: 40em) {
       .home .intro-boxes .box {
-        width: 32.2033898305%;
+        width: 31.4285714286%;
         float: left;
         margin-bottom: 0; }
         .home .intro-boxes .box:nth-child(3n + 1) {
@@ -670,11 +675,11 @@ picture {
           clear: both;
           margin-left: 0; }
         .home .intro-boxes .box:nth-child(3n + 2) {
-          margin-left: 33.8983050847%;
+          margin-left: 34.2857142857%;
           margin-right: -100%;
           clear: none; }
         .home .intro-boxes .box:nth-child(3n + 3) {
-          margin-left: 67.7966101695%;
+          margin-left: 68.5714285714%;
           margin-right: -100%;
           clear: none; } }
     .home .intro-boxes .box img {
@@ -721,6 +726,12 @@ picture {
   .home blockquote p {
     font-size: 1.8125em;
     font-weight: 300; }
+
+.error-404 {
+  padding-top: 30px; }
+
+.contact-page {
+  padding-top: 14px; }
 
 .widget-area .widget-title {
   display: inline-block;
